@@ -1,0 +1,13 @@
+<input type="text" [(ngModel)]="subject.name" placeholder="Nombre">
+<input type="text" [(ngModel)]="subject.description" placeholder="Descripción">
+<button (click)="saveSubject()">
+  {{ editMode ? 'Actualizar' : 'Guardar' }}
+</button>
+<button (click)="clearForm()">Limpiar</button>
+<ul>
+  <li *ngFor="let s of subjects">
+    {{ s.name }} - {{ s.description }}
+    <button (click)="editSubject(s)">Editar</button>
+    <button (click)="deleteSubject(s.id!)">Eliminar</button>
+  </li>
+</ul>

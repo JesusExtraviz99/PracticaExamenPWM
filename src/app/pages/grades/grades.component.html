@@ -1,0 +1,34 @@
+<select [(ngModel)]="grade.studentId">
+  <option value="">Selecciona estudiante</option>
+  <option *ngFor="let s of students" [value]="s.id">
+    {{ s.name }}
+  </option>
+</select>
+
+<select [(ngModel)]="grade.subjectId">
+  <option value="">Selecciona materia</option>
+  <option *ngFor="let s of subjects" [value]="s.id">
+    {{ s.name }}
+  </option>
+</select>
+
+<input type="number" [(ngModel)]="grade.grade" placeholder="Nota">
+
+<button (click)="saveGrade()">
+  {{ editMode ? 'Actualizar' : 'Guardar' }}
+</button>
+
+<button (click)="clearForm()">Limpiar</button>
+
+<ul>
+  <li *ngFor="let g of grades">
+    
+    {{ getStudentName(g.studentId) }} -
+    {{ getSubjectName(g.subjectId) }} -
+    {{ g.grade }}
+
+    <button (click)="editGrade(g)">Editar</button>
+    <button (click)="deleteGrade(g.id!)">Eliminar</button>
+
+  </li>
+</ul>

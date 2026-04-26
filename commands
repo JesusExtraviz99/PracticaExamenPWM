@@ -1,0 +1,10 @@
+crear proyecto angular -> ng new {name-project}
+para entrar al proyecto -> cd {name-project}
+
+instalar angularFire y firebase -> ng add @angular/fire
+
+generar servicio -> ng generate service services/{name}
+
+generar componente -> ng generate component pages/{name}
+
+iniciar servidor -> ng serve

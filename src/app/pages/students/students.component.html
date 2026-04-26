@@ -1,0 +1,13 @@
+<input type="text" [(ngModel)]="student.name" placeholder="Nombre">
+<input type="email" [(ngModel)]="student.email" placeholder="Email">
+<button (click)="saveStudent()">
+  {{ editMode ? 'Actualizar' : 'Guardar' }}
+</button>
+<button (click)="clearForm()">Limpiar</button>
+<ul>
+  <li *ngFor="let s of students">
+    {{ s.name }} - {{ s.email }}
+    <button (click)="editStudent(s)">Editar</button>
+    <button (click)="deleteStudent(s.id!)">Eliminar</button>
+  </li>
+</ul>
