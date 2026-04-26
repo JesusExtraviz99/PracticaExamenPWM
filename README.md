@@ -1,59 +1,66 @@
-# CrudFirebaseApp
+# CRUD Angular + Firebase
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.5.
+Aplicación web desarrollada con Angular y Firebase que implementa un sistema CRUD completo con relaciones entre entidades.
 
-## Development server
+## Funcionalidades
 
-To start a local development server, run:
+* Gestión de estudiantes (Students)
+* Gestión de asignaturas (Subjects)
+* Gestión de calificaciones (Grades)
+* Relación entre entidades mediante IDs
+* Autenticación básica con Firebase (Login)
+
+## Tecnologías usadas
+
+* Angular
+* Firebase (Firestore + Auth)
+* AngularFire
+
+## Ejecución del proyecto
+
+1. Instalar dependencias:
+
+```bash
+npm install
+```
+
+2. Ejecutar el servidor:
 
 ```bash
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+3. Abrir en el navegador:
 
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
+```txt
+http://localhost:4200/
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+## Estructura principal
 
-```bash
-ng generate --help
+```txt
+pages/
+  ├── login/
+  ├── students/
+  ├── subjects/
+  └── grades/
+
+services/
+  ├── firestore.service.ts
+  └── auth.service.ts
 ```
 
-## Building
+## Descripción del funcionamiento
 
-To build the project run:
+* **Students**: CRUD de estudiantes (nombre, email)
+* **Subjects**: CRUD de asignaturas (nombre, descripción)
+* **Grades**: Relaciona estudiantes y asignaturas mediante sus IDs y almacena una nota
 
-```bash
-ng build
-```
+Las relaciones se resuelven en el frontend mostrando los nombres en lugar de los IDs.
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+## Firebase
 
-## Running unit tests
+La aplicación utiliza Firebase para:
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+* Almacenamiento de datos (Firestore)
+* Autenticación de usuarios
